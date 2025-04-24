@@ -19,6 +19,7 @@ class Megahit:
     reads2,
     csb3mer,
     threads,
+    memory,
     kmin,
     kmax,
     kstep,
@@ -35,6 +36,7 @@ class Megahit:
       self.reads2 = os.path.abspath(reads2)
       self.CSB3 = csb3mer
       self.threads = threads
+      self.memory = memory
       self.kmin = kmin
       self.kmax = kmax
       self.kstep = kstep
@@ -61,7 +63,7 @@ class Megahit:
       "-1", self.reads1,
       "-2", self.reads2,
       "-t", str(self.threads),
-      "-m 4",
+      "-m", str(self.memory),
       "-o", "tmp." + self.out + "_megahit",
       "--min-contig-len", str(self.length),
       "--out-prefix", self.out,
