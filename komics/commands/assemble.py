@@ -11,6 +11,7 @@ def main():
 	parser.add_argument('reads1', help='FASTQ file w/ first-in-pair reads', metavar='reads1')
 	parser.add_argument('reads2', help='FASTQ file w/ second-in-pair reads', metavar='reads1')
 	parser.add_argument('--threads', type=int, help='Number of threads [%(default)s]', default=1, metavar='INT')
+	parser.add_argument('--memory', type=int, help='RAM quantity [%(default)s]', default=4, metavar='INT')
 	parser.add_argument('--kmin', help='Minimum k-mer (must be odd number) [%(default)s]', default=39, metavar='INT')
 	parser.add_argument('--kmax', help='Maximum k-mer (must be odd number) [%(default)s]', default=119, metavar='INT')
 	parser.add_argument('--kstep', help='Steps between k-mers (must be even number) [%(default)s]', default=10, metavar='INT')
@@ -29,6 +30,7 @@ def main():
 		options.reads1,
 		options.reads2,
 		csb3mer,
+		options.memory,
 		options.threads,
 		options.kmin,
 		options.kmax,
