@@ -23,6 +23,7 @@ def main():
     parser.add_argument('reads1', help='FASTQ file w/ first-in-pair reads', metavar='reads1')
     parser.add_argument('reads2', help='FASTQ file w/ second-in-pair reads', metavar='reads2')
     parser.add_argument('--threads', type=int, help='Number of threads for the megahit assembler [%(default)s]', default=1, metavar='INT')
+    parser.add_argument('--memory', type=int, help='RAM quantity [%(default)s]', default=4, metavar='INT')
     parser.add_argument('--kmin', type=int, help='Minimum k-mer (must be odd number) [%(default)s]', default=89, metavar='INT')
     parser.add_argument('--kmax', type=int, help='Maximum k-mer (must be odd number) [%(default)s]', default=119, metavar='INT')
     parser.add_argument('--kstep', type=int, help='Steps between k-mers (must be even number) [%(default)s]', default=10, metavar='INT')
@@ -55,6 +56,7 @@ def main():
         options.reads1,
         options.reads2,
         options.threads,
+        options.memory,
         int(k),
         int(k),
         int(0),
