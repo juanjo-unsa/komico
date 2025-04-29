@@ -17,6 +17,7 @@ def main():
     parser.add_argument('out', help='Prefix used for labeling files and sequences', metavar='out')
     parser.add_argument('bam', help='BAM file of reads aligned to reference genome', metavar='bam')
     parser.add_argument('--threads', type=int, help='Number of threads [%(default)s]', default=1, metavar='INT')
+    parser.add_argument('--memory', type=int, help='RAM quantity [%(default)s]', default=4, metavar='INT')
     parser.add_argument('--kmin', help='Minimum k-mer (must be odd number) [%(default)s]', default=29, metavar='INT')
     parser.add_argument('--kmax', help='Maximum k-mer (must be odd number) [%(default)s]', default=119, metavar='INT')
     parser.add_argument('--kstep', help='Steps between k-mers (must be even number) [%(default)s]', default=10, metavar='INT')
@@ -36,6 +37,7 @@ def main():
       options.treads1,
       options.treads2,
       options.threads,
+      options.memory,
       options.kmin,
       options.kmax,
       options.kstep,
